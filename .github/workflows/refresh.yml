@@ -1,0 +1,45 @@
+name: Refresh dashboard
+
+on:
+  schedule:
+    # 09:00 UTC on the 1st of each month
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Regenerate README via gh CLI
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/refresh.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "Felipe Rocha"
+          git config user.email "felipe@olivainternationaltech.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh dashboard (auto)"
+          git push origin HEAD
