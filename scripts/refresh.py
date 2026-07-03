@@ -17,12 +17,13 @@ OWNER = "felipearocha"
 REPO_DIR = Path(__file__).resolve().parents[1]
 
 SERIES = [
-    ("Week 3",  "Integrity-code-series-3",                                                "F1 lap simulation (six coupled ODEs)"),
-    ("Week 6",  "Integrity-code-series-week6-smartphone-galvanic",                        "Smartphone galvanic corrosion (Laplace + BV)"),
-    ("Week 7",  "integrity_code_series_week7_h2_lferw",                                   "LF-ERW H2 conversion (B31.12 + NACE TM0316)"),
+    ("Week 3",  "integrity-code-series-week3-f1-lap-simulation",                          "F1 lap simulation (six coupled ODEs)"),
+    ("Week 6",  "integrity-code-series-week6-smartphone-galvanic",                        "Smartphone galvanic corrosion (Laplace + BV)"),
+    ("Week 7",  "integrity-code-series-week7-h2-lferw",                                   "LF-ERW H2 conversion (B31.12 + NACE TM0316)"),
     ("Week 8",  "integrity-code-series-week8-creep-fatigue-heater",                       "Creep-fatigue 9Cr-1Mo (Norton/Omega + Coffin-Manson)"),
     ("Week 9",  "integrity-code-series-week9-cui",                                        "CUI thermohygro-electrochemical (3 PDEs, Strang)"),
-    ("Week 10", "integrity-code-series-week-10_nnph_scc",                                 "NNpHSCC full-physics (Chen-Sutherby-Xing + BS 7910)"),
+    ("Week 10", "integrity-code-series-week10-nnph-scc",                                  "NNpHSCC full-physics (Chen-Sutherby-Xing + BS 7910)"),
+    ("Week 11", "integrity-code-series-week11-erosion-corrosion-multiphase",              "Erosion-corrosion multiphase (NORSOK M-506 + DNV + G119 + API 579)"),
     ("Bonus",   "Vibration-Accelerated-Corrosion-Coupled-Mechano-Electrochemical-Simulation", "Vibration-accelerated corrosion (SDOF + BV + Archard)"),
     ("Bonus",   "synthetic-integrity-digital-twin-piml",                                  "Physics-informed neural-network surrogate"),
     ("Bonus",   "integrity-data-foundation",                                              "Engineering data validation baseline"),
